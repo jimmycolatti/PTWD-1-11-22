@@ -75,3 +75,27 @@ function printAllWithPromises() {
 }
 
 printAllWithPromises();
+
+// example with async/await
+
+async function printAllWithAsync() {
+  try {
+    await printStringWithPromises('A');
+    await printStringWithPromises('B');
+    await printStringWithPromises('C');
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+printAllWithAsync();
+
+async function getName(name) {
+  return name;
+}
+
+getName('jimmy');
+
+getName('jimmy')
+  .then((passedName) => console.log(passedName))
+  .catch((err) => console.log(err));
